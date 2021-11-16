@@ -20,9 +20,24 @@ http://www.jeffreybane.com
 		$targetLanguage = htmlentities($_POST["tl"]);
 		$varcusBeg = htmlentities($_POST["cusBeg"]);
 		$varcusEnd = htmlentities($_POST["cusEnd"]);
-		$targetType = htmlentities($_POST["targ"]);
-		$targetSQL = htmlentities($_POST["tsql"]);
 		
+		if (isset($_POST["targ"]))
+		{
+			$targetType = htmlentities($_POST["targ"]);
+		}
+		else
+		{
+			$targetType = "";
+		}
+		
+		if (isset($_POST["tsql"]))
+		{
+			$targetSQL = htmlentities($_POST["tsql"]);
+		}
+		else
+		{
+			$targetSQL = "";
+		}
 		
 		$preserveBlankLines = "off";
 		$indent = "off";
@@ -117,7 +132,7 @@ http://www.jeffreybane.com
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 <link rel="icon" type="image/png" href="/Images/BuildMyString.png">	
      <link rel="stylesheet" href="styles.css" type="text/css">
-	 <script src="jq.js" type="text/javascript"></script>
+	 <script src="scripts\jquery-3.3.1.min.js" type="text/javascript"></script>
 	 <script>
 	 $(document).ready(function() {
 	 $('#outputTA').focus();
